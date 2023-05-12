@@ -1,0 +1,18 @@
+.profile__userjob {
+  margin: 0;
+  color: #fff;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 576px) {
+  .profile__userjob {
+    font-size: 14px;
+    line-height: 1.2;
+  }
+}

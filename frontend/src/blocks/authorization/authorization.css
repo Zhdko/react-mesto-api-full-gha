@@ -1,0 +1,8 @@
+.authorization {
+  padding: 60px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 358px;
+  margin: 0 auto;
+}

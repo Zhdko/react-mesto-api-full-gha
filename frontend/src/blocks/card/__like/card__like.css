@@ -1,0 +1,19 @@
+.card__like{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  cursor:pointer;
+  transition:all 0.3s ease;
+  width: 22px;
+  height: 19px;
+  background-image: url(../../../images/heart.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.card__like:hover {
+  opacity: 0.5;
+}

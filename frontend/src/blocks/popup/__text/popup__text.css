@@ -1,0 +1,15 @@
+.popup__text {
+  border: none;
+  padding: 0 0 9px;
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 0.82;
+  color: #000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: inherit;
+}
+
+.popup__text:focus {
+  outline: none;
+}

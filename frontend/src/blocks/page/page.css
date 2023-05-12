@@ -1,0 +1,21 @@
+.page {
+  background-color: #000;
+  max-width: 960px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 0 40px 60px;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+@media screen and (max-width: 768px) {
+  .page {
+    padding: 35px 30px 50px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .page {
+    padding: 28px 19px 36px;
+  }
+}
