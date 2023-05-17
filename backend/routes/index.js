@@ -16,6 +16,12 @@ routers.use(cookieParser());
 
 routers.use(requestLogger);
 
+routers.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
+
 routers.post('/signin', validateLogin, login);
 routers.post('/signup', validateCreateUser, createUser);
 

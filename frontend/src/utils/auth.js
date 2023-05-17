@@ -1,4 +1,4 @@
-export const BASE_URL = "https://auth.nomoreparties.co";
+export const BASE_URL = 'http://api.mesto.zhdko.nomoredomains.monster';
 
 function getResponse(res) {
   if (!res.ok) {
@@ -11,40 +11,42 @@ function getResponse(res) {
 
 export const register = (password, email) => {
   return fetch(`${BASE_URL}/signup`, {
-    method: "POST",
+    method: 'POST',
     headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
     },
+    credentials: 'include',
     body: JSON.stringify({ password, email }),
   }).then((res) => getResponse(res));
 };
 
 export const authorize = (password, email) => {
   return fetch(`${BASE_URL}/signin`, {
-    method: "POST",
+    method: 'POST',
     headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
     },
+    credentials: 'include',
     body: JSON.stringify({ password, email }),
   })
     .then((res) => getResponse(res))
     .then((data) => {
       if (data.token) {
-        localStorage.setItem("jwt", data.token);
+        localStorage.setItem('isAuth', true);
         return data;
       }
     });
 };
 
-export const getContent = (token) => {
+export const getContent = () => {
   return fetch(`${BASE_URL}/users/me`, {
-    method: "GET",
+    method: 'GET',
     headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
     },
+    credentials: 'include',
   }).then((res) => getResponse(res));
 };

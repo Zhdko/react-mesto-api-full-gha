@@ -51,10 +51,9 @@ const login = (req, res, next) => {
       res
         .cookie('jwt', token, {
           maxAge: 3600000 * 24 * 7,
-          httpOnly: true,
           sameSite: true,
         })
-        .send({ message: 'Вы успешно авторизовались' });
+        .send({ token });
     })
     .catch(next);
 };
@@ -68,14 +67,14 @@ const getAllUsers = (req, res, next) => {
 const findUser = (id, res, next) => {
   User.findById(id)
     .orFail(() => new NotFoundError('Пользователь по указанному _id не найден.'))
-    .then((user) => res.send({ data: user }))
+    .then((user) => res.send(user))
     .catch(next);
 };
 
 const findAndUpdate = (id, data, res, next) => {
   User.findByIdAndUpdate(id, data, { new: true, runValidators: true })
     .orFail(() => new NotFoundError('Пользователь по указанному _id не найден.'))
-    .then((user) => res.send({ data: user }))
+    .then((user) => res.send(user))
     .catch(next);
 };
 

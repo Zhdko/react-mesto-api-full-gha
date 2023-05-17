@@ -1,19 +1,19 @@
-import "../index.css";
-import ImagePopup from "./ImagePopup";
-import Main from "./Main";
-import React, { useState, useEffect } from "react";
-import api from "../utils/Api";
-import CurrentUserContext from "./contexts/CurrentUserContext";
-import EditProfilePopup from "./EditProfilePopup";
-import EditAvatarPopup from "./EditAvatarPopup";
-import AddPlacePopup from "./AddPlacePopup";
-import PopupWithConfirm from "./PopupWithConfirm";
-import { Route, Routes, Navigate, useNavigate } from "react-router-dom";
-import Login from "./Login";
-import Register from "./Register";
-import ProtectedRouteElement from "./ProtectedRoute";
-import InfoToolTip from "./InfoToolTip";
-import * as auth from "../utils/auth.js";
+import '../index.css';
+import ImagePopup from './ImagePopup';
+import Main from './Main';
+import React, { useState, useEffect } from 'react';
+import api from '../utils/Api';
+import CurrentUserContext from './contexts/CurrentUserContext';
+import EditProfilePopup from './EditProfilePopup';
+import EditAvatarPopup from './EditAvatarPopup';
+import AddPlacePopup from './AddPlacePopup';
+import PopupWithConfirm from './PopupWithConfirm';
+import { Route, Routes, Navigate, useNavigate } from 'react-router-dom';
+import Login from './Login';
+import Register from './Register';
+import ProtectedRouteElement from './ProtectedRoute';
+import InfoToolTip from './InfoToolTip';
+import * as auth from '../utils/auth.js';
 
 function App() {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
@@ -24,7 +24,7 @@ function App() {
   const [selectedCard, setSelectedCard] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [currentUser, setCurentUser] = useState({});
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState('');
   const [cards, setCards] = useState([]);
   const [loggedIn, setLoggedIn] = useState(false);
   const [message, setMessage] = useState(null);
@@ -38,14 +38,14 @@ function App() {
           setCards(cardsData);
         })
         .catch((err) => {
-          setMessage({ isSuccessfully: true, text: err.message || "Что-то пошло не так! Попробуйте ещё раз." });
+          setMessage({ isSuccessfully: true, text: err.message || 'Что-то пошло не так! Попробуйте ещё раз.' });
         });
     }
   }, [loggedIn]);
 
   useEffect(() => {
     function handleEscClose(evt) {
-      if (evt.key === "Escape") {
+      if (evt.key === 'Escape') {
         closeAllPopups();
       }
     }
@@ -58,10 +58,10 @@ function App() {
       isImagePopupOpen ||
       message
     ) {
-      document.addEventListener("keydown", handleEscClose);
+      document.addEventListener('keydown', handleEscClose);
 
       return () => {
-        document.removeEventListener("keydown", handleEscClose);
+        document.removeEventListener('keydown', handleEscClose);
       };
     }
   }, [
@@ -105,7 +105,7 @@ function App() {
       .catch((err) => {
         setMessage({
           isSuccessfully: true,
-          text: err.message || "Что-то пошло не так! Попробуйте ещё раз.",
+          text: err.message || 'Что-то пошло не так! Попробуйте ещё раз.',
         });
       })
       .finally(() => {
@@ -122,7 +122,7 @@ function App() {
       .catch((err) => {
         setMessage({
           isSuccessfully: true,
-          text: err.message || "Что-то пошло не так! Попробуйте ещё раз.",
+          text: err.message || 'Что-то пошло не так! Попробуйте ещё раз.',
         });
       })
       .finally(() => {
@@ -137,16 +137,16 @@ function App() {
       .then((res) => {
         setMessage({
           isSuccessfully: true,
-          text: "Вы успешно зарегистрировались!",
+          text: 'Вы успешно зарегистрировались!',
         });
         setTimeout(() => setMessage(null), 1500);
-        navigate("/sign-in", { replace: true });
+        navigate('/sign-in', { replace: true });
       })
       .catch((err) => {
         console.log(err.error);
         setMessage({
           isSuccessfully: false,
-          text: err.message || "Что-то пошло не так!",
+          text: err.message || 'Что-то пошло не так!',
         });
       });
   }
@@ -158,14 +158,14 @@ function App() {
         if (data.token) {
           defaultValues();
           setLoggedIn(true);
-          navigate("/", { replace: true });
+          navigate('/', { replace: true });
           setEmail(email);
         }
       })
       .catch((err) =>
         setMessage({
           isSuccessfully: false,
-          text: err.message || "Что-то пошло не так!",
+          text: err.message || 'Что-то пошло не так!',
         })
       );
   }
@@ -180,7 +180,7 @@ function App() {
       .catch((err) => {
         setMessage({
           isSuccessfully: true,
-          text: err.message || "Что-то пошло не так! Попробуйте ещё раз.",
+          text: err.message || 'Что-то пошло не так! Попробуйте ещё раз.',
         });
       })
       .finally(() => {
@@ -191,7 +191,7 @@ function App() {
 
   function handleCardLike(card) {
     const isLiked = card.likes.some((i) => i._id === currentUser._id);
-
+    console.log(isLiked);
     api
       .toggleLike(card._id, isLiked)
       .then((newCard) => {
@@ -200,7 +200,7 @@ function App() {
       .catch((err) => {
         setMessage({
           isSuccessfully: true,
-          text: err.message || "Что-то пошло не так! Попробуйте ещё раз.",
+          text: err.message || 'Что-то пошло не так! Попробуйте ещё раз.',
         });
       });
   }
@@ -216,7 +216,7 @@ function App() {
       .catch((err) => {
         setMessage({
           isSuccessfully: true,
-          text: err.message || "Что-то пошло не так! Попробуйте ещё раз.",
+          text: err.message || 'Что-то пошло не так! Попробуйте ещё раз.',
         });
       })
       .finally(() => {
@@ -231,21 +231,22 @@ function App() {
   }
 
   function tokenCheck() {
-    const jwt = localStorage.getItem("jwt");
-    if (jwt) {
+    const isAuth = localStorage.getItem('isAuth');
+    if (isAuth) {
       auth
-        .getContent(jwt)
+        .getContent()
         .then((res) => {
           if (res) {
             setLoggedIn(true);
-            navigate("/", { replace: true });
-            setEmail(res.data.email);
+            navigate('/', { replace: true });
+            console.log(res);
+            setEmail(res.email);
           }
         })
         .catch((err) => {
           setMessage({
             isSuccessfully: true,
-            text: err.message || "Что-то пошло не так! Попробуйте ещё раз.",
+            text: err.message || 'Что-то пошло не так! Попробуйте ещё раз.',
           });
         });
     }
@@ -260,7 +261,7 @@ function App() {
       <CurrentUserContext.Provider value={currentUser}>
         <Routes>
           <Route
-            path="/"
+            path='/'
             element={
               <ProtectedRouteElement
                 loggedIn={loggedIn}
@@ -276,35 +277,35 @@ function App() {
               />
             }
           />
-          <Route path="*" element={loggedIn ? <Navigate to="/" /> : <Navigate to="/sign-in" />} />
-          <Route path="/sign-in" element={<Login onLogin={handleLogin} />} />
-          <Route path="/sign-up" element={<Register onRegister={handleRegister} />} />
+          <Route path='*' element={loggedIn ? <Navigate to='/' /> : <Navigate to='/sign-in' />} />
+          <Route path='/sign-in' element={<Login onLogin={handleLogin} />} />
+          <Route path='/sign-up' element={<Register onRegister={handleRegister} />} />
         </Routes>
 
         <EditProfilePopup
           isOpen={isEditProfilePopupOpen}
           onClose={closeAllPopups}
           onUpdateUser={handleUpdateUser}
-          textBtn={isLoading ? "Сохранение..." : "Сохранить"}
+          textBtn={isLoading ? 'Сохранение...' : 'Сохранить'}
         />
         <AddPlacePopup
           isOpen={isAddPlacePopupOpen}
           onClose={closeAllPopups}
           onAddPlace={handleAddPlace}
-          textBtn={isLoading ? "Создание..." : "Создать"}
+          textBtn={isLoading ? 'Создание...' : 'Создать'}
         />
         <EditAvatarPopup
           isOpen={isEditAvatarPopupOpen}
           onClose={closeAllPopups}
           onUpdateAvatar={handleUpdateAvatar}
-          textBtn={isLoading ? "Сохранение..." : "Сохранить"}
+          textBtn={isLoading ? 'Сохранение...' : 'Сохранить'}
         />
         <PopupWithConfirm
           isOpen={isDeleteCardPopupOpen}
           onClose={closeAllPopups}
           onCardDelete={handleCardDelete}
           card={selectedCard}
-          textBtn={isLoading ? "Удаление..." : "Да"}
+          textBtn={isLoading ? 'Удаление...' : 'Да'}
         />
         <ImagePopup isOpen={isImagePopupOpen} onClose={closeAllPopups} card={selectedCard} />
         <InfoToolTip message={message} onClose={closeAllPopups} />

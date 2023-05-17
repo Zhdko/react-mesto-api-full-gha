@@ -5,7 +5,7 @@ const ConflictError = require('../errors/ConflictError');
 const getAllCards = (req, res, next) => {
   Card.find({})
     .populate(['owner', 'likes'])
-    .then((cards) => res.send({ data: cards }))
+    .then((cards) => res.send(cards))
     .catch(next);
 };
 
@@ -16,7 +16,10 @@ const createCard = (req, res, next) => {
   Card.create({ name, link, owner: cardOwner })
     .then((card) => {
       if (!card) throw new NotFoundError('Ошибка при создании карточки');
-      card.populate('owner').then((cardInfo) => res.status(201).send(cardInfo)).catch(next);
+      card
+        .populate('owner')
+        .then((cardInfo) => res.status(201).send(cardInfo))
+        .catch(next);
     })
     .catch(next);
 };
@@ -28,7 +31,10 @@ const deleteCard = (req, res, next) => {
       if (req.user._id !== card.owner.toString()) {
         throw new ConflictError('Только владелец карточки может ее удалить');
       }
-      card.deleteOne().then(() => res.send({ data: card })).catch(next);
+      card
+        .deleteOne()
+        .then(() => res.send(card))
+        .catch(next);
     })
     .catch(next);
 };
@@ -36,7 +42,8 @@ const deleteCard = (req, res, next) => {
 const findAndUpdate = (cardId, data, res, next) => {
   Card.findByIdAndUpdate(cardId, data, { new: true })
     .orFail(() => new NotFoundError('Карточка не найдена'))
-    .then((card) => res.send({ data: card }))
+    .populate(['owner', 'likes'])
+    .then((card) => res.send(card))
     .catch(next);
 };
 

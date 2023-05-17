@@ -3,3 +3,12 @@
   gap: 24px;
   align-items: center;
 }
+
+@media screen and (max-width: 576px) {
+  .header__container {
+    gap: 10px;
+    flex-direction: column-reverse;
+    align-items: end;
+    margin-right: 27px;
+  }
+}
