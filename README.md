@@ -57,10 +57,10 @@
 
 ## Ссылки на проект
 
-IP-адрес 51.250.95.243
+ - IP-адрес 51.250.95.243
 
-Frontend https://mesto.zhdko.nomoredomains.monster
+ - Frontend https://mesto.zhdko.nomoredomains.monster
 
-Backend https://api.mesto.zhdko.nomoredomains.monster
+ - Backend https://api.mesto.zhdko.nomoredomains.monster
 
 [Reposotory URL](https://github.com/Zhdko/react-mesto-api-full-gha)
