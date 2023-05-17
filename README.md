@@ -35,11 +35,6 @@
 
 ![Скриншот проекта](./image/screenshoot_project_mesto.png)
 
-### Ссылки
-
-- [Reposotory URL](https://github.com/Zhdko/react-mesto-auth/)
-- [GITpages URL](https://zhdko.github.io/react-mesto-auth/)
-
 ## Мой процесс
 
 ### Построен с
@@ -62,8 +57,10 @@
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP-адрес 51.250.95.243
 
-Frontend https://...
+Frontend https://mesto.zhdko.nomoredomains.monster
 
-Backend https://...
+Backend https://api.mesto.zhdko.nomoredomains.monster
+
+[Reposotory URL](https://github.com/Zhdko/react-mesto-api-full-gha)
