@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://api.mesto.zhdko.nomoredomains.monster';
+export const BASE_URL = 'https://api.mesto.zhdko.nomoredomains.monster';
 
 function getResponse(res) {
   if (!res.ok) {

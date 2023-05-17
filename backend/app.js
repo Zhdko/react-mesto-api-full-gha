@@ -16,7 +16,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/mestodb', { useNewUrlParser: true })
 app.use(
   cors({
     credentials: true,
-    origin: 'http://mesto.zhdko.nomoredomains.monster',
+    origin: 'https://mesto.zhdko.nomoredomains.monster',
     exposedHeaders: ['set-cookie'],
   }),
 );
