@@ -57,7 +57,7 @@
 
 ## Ссылки на проект
 
-IP-адрес <51.250.95.243>
+IP <51.250.95.243>
 
 Frontend <https://mesto.zhdko.nomoredomains.monster>
 
