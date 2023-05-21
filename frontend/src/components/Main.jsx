@@ -10,7 +10,7 @@ function Main(props) {
 
   return (
     <div>
-      <Header link='/sign-in' linkName='Выйти' email={props.email} />
+      <Header link='/sign-in' linkName='Выйти' email={props.email} onLogout={props.onLogout}/>
       <main className='content page__content'>
         <section className='profile'>
           <div className='profile__avatar'>

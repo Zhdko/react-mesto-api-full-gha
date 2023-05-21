@@ -51,11 +51,19 @@ const login = (req, res, next) => {
       res
         .cookie('jwt', token, {
           maxAge: 3600000 * 24 * 7,
-          sameSite: true,
+          sameSite: 'none',
+          secure: true,
+          httpOnly: true,
         })
         .send({ token });
     })
     .catch(next);
+};
+
+const logout = (req, res) => {
+  res.clearCookie('jwt');
+  res.status(200).send({ message: 'Вы успешно вышли' });
+  res.end();
 };
 
 const getAllUsers = (req, res, next) => {
@@ -100,4 +108,5 @@ module.exports = {
   updateUser,
   updateAvatar,
   login,
+  logout,
 };

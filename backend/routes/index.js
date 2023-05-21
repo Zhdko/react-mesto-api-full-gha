@@ -5,7 +5,7 @@ const helmet = require('helmet');
 const routers = require('express').Router();
 const { errors } = require('celebrate');
 const NotFoundError = require('../errors/NotFoundError');
-const { login, createUser } = require('../controllers/users');
+const { login, createUser, logout } = require('../controllers/users');
 const { validateLogin, validateCreateUser } = require('../middlewares/userValidation');
 const { userRouter } = require('./users');
 const { cardRouter } = require('./cards');
@@ -36,6 +36,7 @@ routers.get('/crash-test', () => {
 
 routers.post('/signin', validateLogin, login);
 routers.post('/signup', validateCreateUser, createUser);
+routers.post('/signout', logout);
 
 routers.use('/users', auth, userRouter);
 routers.use('/cards', auth, cardRouter);

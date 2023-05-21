@@ -5,6 +5,7 @@ function Header(props) {
   const navigate = useNavigate();
   function signOut() {
     localStorage.removeItem('isAuth');
+    props.onLogout()
     navigate('/sign-in', { replace: true });
   }
   return (

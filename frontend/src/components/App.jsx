@@ -170,6 +170,18 @@ function App() {
       );
   }
 
+  function handleLogout() {
+    auth
+      .logout()
+      .then(res => res)
+      .catch((err) => {
+        setMessage({
+          isSuccessfully: true,
+          text: err.message || 'Что-то пошло не так! Попробуйте ещё раз.',
+        });
+      });
+  }
+  
   function handleAddPlace(newCard) {
     setIsLoading(true);
     api

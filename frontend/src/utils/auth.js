@@ -40,6 +40,14 @@ export const authorize = (password, email) => {
     });
 };
 
+export const logout = () => {
+  return fetch(`${BASE_URL}/signout`, {
+    method: 'POST',
+    credentials: 'include'
+  })
+    .then((res) => getResponse(res))
+}
+
 export const getContent = () => {
   return fetch(`${BASE_URL}/users/me`, {
     method: 'GET',
