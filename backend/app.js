@@ -4,8 +4,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const { routers } = require('./routes');
-
-const { PORT = 3000, DB = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
+const { MONGO_DB, PORT, CORS_OPTIONS } = require('./utils/config');
 
 process.on('uncaughtException', (err, origin) => {
   console.log(`${origin} ${err.name} c текстом ${err.message} не была обработана. Обратите внимание!`);
@@ -13,18 +12,9 @@ process.on('uncaughtException', (err, origin) => {
 
 const app = express();
 
-mongoose.connect(DB, { useNewUrlParser: true }).catch((err) => console.log(err));
+mongoose.connect(MONGO_DB, { useNewUrlParser: true }).catch((err) => console.log(err));
 
-app.use(
-  cors({
-    credentials: true,
-    origin: [
-      'https://mesto.zhdko.nomoredomains.monster',
-      'http://mesto.zhdko.nomoredomains.monster',
-    ],
-    exposedHeaders: ['set-cookie'],
-  }),
-);
+app.use(cors(CORS_OPTIONS));
 
 app.use(routers);
 

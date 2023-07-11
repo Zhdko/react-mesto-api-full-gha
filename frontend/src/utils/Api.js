@@ -1,3 +1,5 @@
+import { BASE_URL } from '../constants/constants';
+
 export class Api {
   constructor({ baseUrl, headers }) {
     this._baseUrl = baseUrl;
@@ -109,7 +111,7 @@ export class Api {
 }
 
 const api = new Api({
-  baseUrl: 'https://api.mesto.zhdko.nomoredomains.monster',
+  baseUrl: BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },

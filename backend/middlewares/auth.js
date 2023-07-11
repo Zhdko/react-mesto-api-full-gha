@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const AuthorizationError = require('../errors/AuthorizationError');
-const { secretKey } = require('../utils/constants');
+const { SECRET_KEY } = require('../utils/config');
 require('dotenv').config();
 
 module.exports = (req, res, next) => {
@@ -12,7 +12,7 @@ module.exports = (req, res, next) => {
 
   let payload;
   try {
-    payload = jwt.verify(token, secretKey);
+    payload = jwt.verify(token, SECRET_KEY);
   } catch (err) {
     return next(new AuthorizationError('Необходима авторизация.'));
   }

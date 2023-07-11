@@ -5,17 +5,11 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 const RegisterError = require('../errors/RegisterError');
 const NotFoundError = require('../errors/NotFoundError');
-const { secretKey } = require('../utils/constants');
 const RequestError = require('../errors/ValidationError');
+const { SECRET_KEY } = require('../utils/config');
 
 const createUser = (req, res, next) => {
-  const {
-    name,
-    about,
-    avatar,
-    email,
-    password,
-  } = req.body;
+  const { name, about, avatar, email, password } = req.body;
 
   bcrypt.hash(password, 10).then((hash) => {
     User.create({
@@ -47,7 +41,7 @@ const login = (req, res, next) => {
 
   return User.findUserByCredentials(email, password)
     .then((user) => {
-      const token = jwt.sign({ _id: user.id }, secretKey, { expiresIn: '7d' });
+      const token = jwt.sign({ _id: user.id }, SECRET_KEY, { expiresIn: '7d' });
       res
         .cookie('jwt', token, {
           maxAge: 3600000 * 24 * 7,
