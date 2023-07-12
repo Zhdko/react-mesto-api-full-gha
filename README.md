@@ -153,12 +153,12 @@ npm install
 
    > Адрес сервера Mongo по умолчанию: `mongodb://localhost:27017`,<br> в этом проекте используется другой путь. <br> Отредактируйте путь на ваш
 
-   - Перейти в файл `/backend/utils/config.js`
-   - Ввести свой путь к базе данных вместо `'mongodb://127.0.0.1:27017/mesto'`
+- Перейти в файл `/backend/utils/config.js`
+- Ввести свой путь к базе данных вместо `'mongodb://127.0.0.1:27017/mesto'`
 
-   ```javascript
-   const MONGO_DB = NODE_ENV === 'production' ? DB : 'mongodb://127.0.0.1:27017/mesto';
-   ```
+```javascript
+const MONGO_DB = NODE_ENV === 'production' ? DB : 'mongodb://127.0.0.1:27017/mesto';
+```
 
 4. Запусть MongoDB в терминале
 
