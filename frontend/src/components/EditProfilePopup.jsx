@@ -13,7 +13,6 @@ function EditProfilePopup(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(values);
     props.onUpdateUser(values);
   }
 
