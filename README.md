@@ -203,5 +203,5 @@ npm install
 [express-url]: https://expressjs.com
 [HTML5]: ./frontend/src/images/readme/techologes/html5.svg
 [HTML5-url]: https://html.com/html5/
-[MongoDB]: ./frontend/src/images/readme/techologes/MongoDB.svg
+[MongoDB]: ./frontend/src/images/readme/techologes/mongoDB.svg
 [MongoDB-url]: https://www.mongodb.com/
