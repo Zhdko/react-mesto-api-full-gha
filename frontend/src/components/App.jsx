@@ -143,7 +143,6 @@ function App() {
         navigate('/sign-in', { replace: true });
       })
       .catch((err) => {
-        console.log(err.error);
         setMessage({
           isSuccessfully: false,
           text: err.message || 'Что-то пошло не так!',
@@ -173,7 +172,7 @@ function App() {
   function handleLogout() {
     auth
       .logout()
-      .then(res => res)
+      .then((res) => res)
       .catch((err) => {
         setMessage({
           isSuccessfully: true,
@@ -181,7 +180,7 @@ function App() {
         });
       });
   }
-  
+
   function handleAddPlace(newCard) {
     setIsLoading(true);
     api
@@ -203,7 +202,6 @@ function App() {
 
   function handleCardLike(card) {
     const isLiked = card.likes.some((i) => i._id === currentUser._id);
-    console.log(isLiked);
     api
       .toggleLike(card._id, isLiked)
       .then((newCard) => {
@@ -251,7 +249,6 @@ function App() {
           if (res) {
             setLoggedIn(true);
             navigate('/', { replace: true });
-            console.log(res);
             setEmail(res.email);
           }
         })
