@@ -1,4 +1,4 @@
-<a id="readme-top"><img src='./frontend/src/images/readme/Group.svg' size='cover' width="100%"/></a>
+<a id="readme-top"><img src='./frontend/src/images/readme/logo.svg' size='cover' width="100%"/></a>
 ![Скриншот проекта](./frontend/src/images/readme/screenshoot_project_mesto%201.png)
 
 <details>
@@ -19,12 +19,7 @@
         <li><a href="#установка">Установка</a></li>
       </ul>
     </li>
-    <li><a href="#автор">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#автор">Автор</a></li>
   </ol>
 </details>
 
@@ -70,15 +65,19 @@
 - В проекте реализованы возможности:
 
   - Редактирование профиля;
+
     ![форма редактирования профиля](./frontend/src/images/readme/edit-profile.gif)
 
   - Добавление новой карточки с фотографией;
+
     ![форма добавления карточки](./frontend/src/images/readme/add-card.gif)
 
   - Удаление и лайк карточки;
+
     ![лайк и удаление карточки](./frontend/src/images/readme/like-and-delete.gif)
 
   - открытие карточки в полноэкранном виде;
+
     ![открытие карточки в полноэкранном виде](./frontend/src/images/readme/full-width-image.gif)
 
 <p align="right"><a href="#readme-top"><img alt="Logo" width="40" height="40" src='./frontend/src/images/readme/top.svg'></a></p>
@@ -183,7 +182,7 @@ npm install
 
 <p align="right"><a href="#readme-top"><img alt="Logo" width="40" height="40" src='./frontend/src/images/readme/top.svg'></a></p>
 
-## <a id='автор'><img src='./frontend/src/images/readme/links/profile.svg' id='автор' width="100%"/></a>
+## <a id='автор'><img src='./frontend/src/images/readme/profile.svg' id='автор' width="100%"/></a>
 
 <div align='right'>
   <a href='https://github.com/Zhdko'><img src='./frontend/src/images/readme/links/git-hub.svg' /></a>
