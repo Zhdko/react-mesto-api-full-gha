@@ -1,4 +1,4 @@
-<a id="readme-top">![logo](./frontend/src/images/readme/Group.svg)</a>
+<a id="readme-top"><img src='./frontend/src/images/readme/Group.svg' size='cover' width="100%"/></a>
 ![Скриншот проекта](./frontend/src/images/readme/screenshoot_project_mesto%201.png)
 
 <details>
@@ -179,14 +179,14 @@ npm install
   npm run start
 ```
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Montserrat&pause=1000&center=true&width=500&lines=%D0%93%D0%BE%D1%82%D0%BE%D0%B2%D0%BE!)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Montserrat&pause=1000&center=true&width=800&lines=%D0%93%D0%BE%D1%82%D0%BE%D0%B2%D0%BE!)](https://git.io/typing-svg)
 
 <p align="right"><a href="#readme-top"><img alt="Logo" width="40" height="40" src='./frontend/src/images/readme/top.svg'></a></p>
 
-## <a id='автор'><img src='./frontend/src/images/readme/links/profile.png' id='автор'/></a>
+## <a id='автор'><img src='./frontend/src/images/readme/links/profile.svg' id='автор' width="100%"/></a>
 
 <div align='right'>
-  <a href='https://github.com/Zhdko'><img src='./frontend/src/images/readme/links/git-hub.svg'/></a>
+  <a href='https://github.com/Zhdko'><img src='./frontend/src/images/readme/links/git-hub.svg' /></a>
   <a href='https://www.linkedin.com/in/zhdko/'><img src='./frontend/src/images/readme/links/linkedin.svg'/></a>
 </div>
 
